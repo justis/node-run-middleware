@@ -28,7 +28,8 @@ module.exports=function(app){
 	    options.url=path
 	    var new_req,new_res;
 	    if(options.original_req){
-	    	new_req=options.original_req
+	    	// clone entire request, to support parallel operations
+	    	new_req = _.cloneDeep(options.original_req);
 	    	for(var i in options){
 	    		if(i=='original_req') continue;
 	    		new_req[i]=options[i]

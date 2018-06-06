@@ -1,6 +1,5 @@
-var _=require('lodash')
-
-var request=require('express/lib/request')
+const _ = require('lodash');
+const { request } = require('express');
 
 module.exports=function(app){
 
